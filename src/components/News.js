@@ -40,47 +40,6 @@ const News = (props)=> {
    },[])
 
 
-  // const updateNews = async () => {
-  //   try {
-  //     props.setProgress(5);
-  //     const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
-  //     setLoading(true);
-  //     props.setProgress(30);
-  
-  //     let data = await fetch(url);
-  
-  //     if (!data.ok) {
-  //       throw new Error(`Failed to fetch: ${data.status} - ${data.statusText}`);
-  //     }
-  
-  //     props.setProgress(60);
-  //     let parsedData = await data.json();
-  //     props.setProgress(0);
-  
-  //     setArticles(parsedData.articles);
-  //     setTotalResults(parsedData.totalResults);
-  //     setLoading(false);
-  //     props.setProgress(100);
-  //   } catch (error) {
-  //     console.error('Error fetching data:', error.message);
-  //     // Handle the error (e.g., show an error message to the user)
-  //     setLoading(false);
-  //   }
-  // };
-  
-  
-
-  //  const handlePrevClick= async ()=>{
-  //   setPage(page-1);
-  //   updateNews();
-
-  //  }
-
-  // const handleNextClick= async ()=>{
-  //   setPage(page+1);
-  //   updateNews();
-  
-  //  }
 
   const fetchMoreData = async() => {
     const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`;
